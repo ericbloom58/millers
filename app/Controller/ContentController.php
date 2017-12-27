@@ -103,6 +103,7 @@ $this->set('galleries', $galleries);
     public function home()
     {
         $this->set('home', $this->Content->findById(7));
+        $this->set('notification', $this->Content->findById(17));
     }
     //End of Code for Home PAge
 

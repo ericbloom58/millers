@@ -30,6 +30,7 @@
 					data-start="1000" 
 					data-responsive_offset="on">
 
+					<div class="caption-text" style="margin-top:25%;"><?= $notification['Content']['content']; ?></div>
 					 
 					<!--<img src="/images/sanwich.jpeg" data-ww="['500px','470px','385px','366px']" alt="" style="margin-top: 25%;">-->
 				</div>
