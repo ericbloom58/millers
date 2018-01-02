@@ -39,7 +39,7 @@
 					<div class="post-content">
 						<!-- Categories -->
 						<ul class="post-categories">
-							<li><a href="#">Blog Post 1</a></li>
+							<li><a href="#">Blog Post 17</a></li>
 						</ul>
 
 						<!-- Meta -->

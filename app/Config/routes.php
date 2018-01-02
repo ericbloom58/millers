@@ -28,7 +28,8 @@
 //	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
         Router::connect('/', array('controller' => 'content', 'action' => 'home'));
         Router::connect('/about', array('controller' => 'content', 'action' => 'about_us'));
-        Router::connect('/news', array('controller' => 'content', 'action' => 'news'));
+        Router::connect('/news', array('controller' => 'content', 'action' => 'news2'));
+        Router::connect('/specials', array('controller' => 'content', 'action' => 'specials'));
         Router::connect('/blog', array('controller' => 'content', 'action' => 'news'));
         Router::connect('/admin', array('controller' => 'users', 'action' => 'login', 'admin' => true));
         

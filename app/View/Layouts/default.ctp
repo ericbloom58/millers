@@ -85,7 +85,7 @@
 							<li class="dropdown"><a href="/" class="current">Home</a></li>
 							<li><a href="/about">About Us</a></li>
 							<li><a href="/pages/news">News</a></li>
-							<li><a href="/pages/specials">Weekly Specials</a></li>
+							<li><a href="/specials">Weekly Specials</a></li>
 							<li class="dropdown" ><a href="/pages/recipes">Recipes</a></li>
 							<li><a href="/pages/meats">Meats</a></li>
 							<li><a href="/pages/hotfoods">Hot Foods</a></li>
@@ -127,7 +127,7 @@
 							<li class="dropdown"><a href="/" class="current">Home</a></li>
 							<li><a href="/pages/aboutus">About Us</a></li>
 							<li><a href="/pages/news">News</a></li>
-							<li><a href="/pages/specials">Weekly Specials</a></li>
+							<li><a href="/specials">Weekly Specials</a></li>
 							<li class="dropdown" ><a href="/pages/recipes">Recipes</a></li>
 				</ul>
 

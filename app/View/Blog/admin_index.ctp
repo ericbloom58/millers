@@ -12,6 +12,7 @@
 	<thead>
 		<tr>
 			<th>Post Name</th>
+			<th>Post Description</th>
 			
 			<th>Options</th>
 		</tr>
@@ -20,6 +21,7 @@
 	<?php foreach ($blogs as $blog) { ?>
 		<tr>
 			<td><?php echo $blog['Blog']['name']; ?></td>
+			<td><?php echo $blog['Blog']['description']; ?></td>
 			
 			<td>
 				<a role="button" class="btn btn-primary" href="/admin/blog/edit/<?php echo $blog['Blog']['id']; ?>"><i class="fa fa-edit"></i> Edit</a>&nbsp;

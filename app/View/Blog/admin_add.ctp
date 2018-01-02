@@ -19,6 +19,7 @@ function closeCustomRoxy2(){
 
 		<div class="row form-group">	
 			<?php echo $this->Form->input('Blog.name', array('div' => 'col-md-4', 'label' => 'Post Name', 'autofocus', 'class' => 'input form-control')); ?>
+			<?php echo $this->Form->input('Blog.description', array('div' => 'col-md-4', 'label' => 'Post Description', 'autofocus', 'class' => 'input form-control')); ?>
                 </div>
 		
 		<div class="row form-group">

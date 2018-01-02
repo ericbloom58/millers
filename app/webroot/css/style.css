@@ -8827,7 +8827,7 @@ body .tabs-nav li a {
 
 .blog .widget-text {
 	display: inline-block;
-	width: 70%;
+	width: 100%;
 	padding: 0 5px 0 0;
 	position: relative;
 }

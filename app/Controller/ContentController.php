@@ -14,7 +14,7 @@ class ContentController extends AppController {
      public function beforeFilter() {
         parent::beforeFilter();
         // Allow users to register and logout.
-        $this->Auth->allow('about_us', 'viewHomes', 'viewHome');
+        $this->Auth->allow('about_us', 'news', 'news2', 'specials');
     }
     //Code for About Us Page
     public function about_us() {
@@ -76,8 +76,21 @@ $this->set('galleries', $galleries);
     $this->set('gallery', $gallery);
     $this->set('galleries', $galleries);
     }
-    //Code for News Blog
+    //Code for News Blog this was the original but news2 looks better so I used that instead.  this one is current unused
     public function news()
+    {
+        $this->loadModel('Blog');
+        $news = $this->Blog->find('all', array(
+            'order' => array(
+                'created' => 'DESC'
+            )
+        ));
+     //   pr($news); exit();
+        $this->set('news', $news);
+    }
+    
+    //Code for News Blog, currently in use for /news
+    public function news2()
     {
         $this->loadModel('Blog');
         $news = $this->Blog->find('all', array(
