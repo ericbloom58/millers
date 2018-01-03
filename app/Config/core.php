@@ -153,6 +153,7 @@
  *	`admin_index()` and `/admin/controller/index`
  *	`manager_index()` and `/manager/controller/index`
  */
+<<<<<<< HEAD
 	//Configure::write('Routing.prefixes', array('admin'));
 
 /**
@@ -231,6 +232,86 @@
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
 	Configure::write('Security.cipherSeed', '76859309657453542496749683645');
+=======
+	Configure::write('Routing.prefixes', array('admin'));
+
+/**
+ * Turn off all caching application-wide.
+ */
+	//Configure::write('Cache.disable', true);
+
+/**
+ * Enable cache checking.
+ *
+ * If set to true, for view caching you must still use the controller
+ * public $cacheAction inside your controllers to define caching settings.
+ * You can either set it controller-wide by setting public $cacheAction = true,
+ * or in each action using $this->cacheAction = true.
+ */
+	//Configure::write('Cache.check', true);
+
+/**
+ * Enable cache view prefixes.
+ *
+ * If set it will be prepended to the cache name for view file caching. This is
+ * helpful if you deploy the same application via multiple subdomains and languages,
+ * for instance. Each version can then have its own view cache namespace.
+ * Note: The final cache file name will then be `prefix_cachefilename`.
+ */
+	//Configure::write('Cache.viewPrefix', 'prefix');
+
+/**
+ * Session configuration.
+ *
+ * Contains an array of settings to use for session configuration. The defaults key is
+ * used to define a default preset to use for sessions, any settings declared here will override
+ * the settings of the default config.
+ *
+ * ## Options
+ *
+ * - `Session.cookie` - The name of the cookie to use. Defaults to 'CAKEPHP'
+ * - `Session.timeout` - The number of minutes you want sessions to live for. This timeout is handled by CakePHP
+ * - `Session.cookieTimeout` - The number of minutes you want session cookies to live for.
+ * - `Session.checkAgent` - Do you want the user agent to be checked when starting sessions? You might want to set the
+ *    value to false, when dealing with older versions of IE, Chrome Frame or certain web-browsing devices and AJAX
+ * - `Session.defaults` - The default configuration set to use as a basis for your session.
+ *    There are four builtins: php, cake, cache, database.
+ * - `Session.handler` - Can be used to enable a custom session handler. Expects an array of callables,
+ *    that can be used with `session_save_handler`. Using this option will automatically add `session.save_handler`
+ *    to the ini array.
+ * - `Session.autoRegenerate` - Enabling this setting, turns on automatic renewal of sessions, and
+ *    sessionids that change frequently. See CakeSession::$requestCountdown.
+ * - `Session.cacheLimiter` - Configure the cache control headers used for the session cookie.
+ *   See http://php.net/session_cache_limiter for accepted values.
+ * - `Session.ini` - An associative array of additional ini values to set.
+ *
+ * The built in defaults are:
+ *
+ * - 'php' - Uses settings defined in your php.ini.
+ * - 'cake' - Saves session files in CakePHP's /tmp directory.
+ * - 'database' - Uses CakePHP's database sessions.
+ * - 'cache' - Use the Cache class to save sessions.
+ *
+ * To define a custom session handler, save it at /app/Model/Datasource/Session/<name>.php.
+ * Make sure the class implements `CakeSessionHandlerInterface` and set Session.handler to <name>
+ *
+ * To use database sessions, run the app/Config/Schema/sessions.php schema using
+ * the cake shell command: cake schema create Sessions
+ */
+	Configure::write('Session', array(
+		'defaults' => 'php'
+	));
+
+/**
+ * A random string used in security hashing methods.
+ */
+	Configure::write('Security.salt', 'awerds98324ASDFy87432yfdgdsfASDF23478uFASDdsf');
+
+/**
+ * A random numeric string (digits only) used to encrypt/decrypt strings.
+ */
+	Configure::write('Security.cipherSeed', '45651787951321524987651234657958415376323');
+>>>>>>> origin/master
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).

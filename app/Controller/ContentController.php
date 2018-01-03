@@ -14,6 +14,7 @@ class ContentController extends AppController {
      public function beforeFilter() {
         parent::beforeFilter();
         // Allow users to register and logout.
+<<<<<<< HEAD
         $this->Auth->allow('about_us', 'viewHomes', 'viewHome');
     }
     //Code for About Us Page
@@ -94,6 +95,92 @@ $this->set('galleries', $galleries);
     public function home()
     {
         $this->set('home', $this->Content->findById(7));
+=======
+        $this->Auth->allow('about_us', 'news', 'news2', 'specials', 'newspost');
+    }
+    //Code for About Us Page
+    public function about_us() {
+        $this->set('aboutus', $this->Content->findById(16));
+    }
+    //End of Code for About Us Page
+    
+    public function galleries($available=null) {
+        if($available === null) {
+        $homes = $this->Content->find('list', array(
+            'fields' => array('id','linked_gallery'),
+            'conditions' => array(
+            'Content.page_type' => 'house'
+        )));
+        }
+        else
+        {
+             $homes = $this->Content->find('list', array(
+                 'fields' => array('id','linked_gallery'),
+                 'conditions' => array(
+            'Content.page_type' => 'house',
+                 'Content.available' => 'yes'
+        )));
+        }
+
+        
+        $this->loadModel('Gallery');
+       
+        
+        $galleries = $this->Gallery->find('all', array('conditions' => array('folder' => $homes)));
+
+        foreach($galleries as $i => $gallery): 
+            $log_directory = WWW_ROOT . 'files' . DS . 'galleries' . DS . $gallery['Gallery']['folder'];
+                $files = array_diff(scandir($log_directory), array('.', '..'));
+         //   pr($files);
+        $galleries[$i]['Gallery']['first_image'] =  array_shift($files);
+
+
+        endforeach;
+
+        //pr($galleries); exit();
+        $this->set('galleries', $galleries);
+    }
+    
+    public function newspost($id = null)
+    {
+        $this->loadModel('Blog');
+        $news = $this->Blog->findById($id);
+        //pr($content);
+        $anews = $this->Blog->find('all');
+        
+        $this->set('news', $news);
+        $this->set('anews', $anews);
+    }
+        
+    //Code for News Blog 
+    public function news()
+    {
+        $this->loadModel('Blog');
+        $news = $this->Blog->find('all', array(
+            'order' => array(
+                'created' => 'DESC'
+            )
+        ));
+     //   pr($news); exit();
+        $this->set('news', $news);
+    }
+    //End of Code for News Blog
+    public function specials()
+    {
+        $this->loadModel('Special');
+        $specials = $this->Special->find('all', array(
+            'order' => array(
+                'created' => 'DESC'
+            )
+        ));
+        $this->set('specials', $specials);
+    }
+    //Code for Home Page
+    public function home()
+    {
+        $this->set('home', $this->Content->findById(7));
+        $this->set('notification', $this->Content->findById(17));
+>>>>>>> origin/master
     }
     //End of Code for Home PAge
 
