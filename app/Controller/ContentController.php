@@ -14,7 +14,7 @@ class ContentController extends AppController {
      public function beforeFilter() {
         parent::beforeFilter();
         // Allow users to register and logout.
-        $this->Auth->allow('about_us', 'news', 'news2', 'specials');
+        $this->Auth->allow('about_us', 'news', 'news2', 'specials', 'newspost');
     }
     //Code for About Us Page
     public function about_us() {
@@ -50,47 +50,28 @@ class ContentController extends AppController {
             $log_directory = WWW_ROOT . 'files' . DS . 'galleries' . DS . $gallery['Gallery']['folder'];
                 $files = array_diff(scandir($log_directory), array('.', '..'));
          //   pr($files);
-    $galleries[$i]['Gallery']['first_image'] =  array_shift($files);
+        $galleries[$i]['Gallery']['first_image'] =  array_shift($files);
 
 
-endforeach;
+        endforeach;
 
-//pr($galleries); exit();
-$this->set('galleries', $galleries);
+        //pr($galleries); exit();
+        $this->set('galleries', $galleries);
     }
     
-    public function gallery($id = null)
-    {
-        $this->loadModel('Gallery');
-        $gallery = $this->Gallery->findById($id);
-        $content = $this->Content->findByLinkedGallery($gallery['Gallery']['folder']);
-        $this->set('content', $content);
-        //pr($content);
-        $galleries = $this->Gallery->find('all');
-        
-        $log_directory = WWW_ROOT . 'files' . DS . 'galleries' . DS . $gallery['Gallery']['folder'];
-                $files = array_diff(scandir($log_directory), array('.', '..'));
-         //   pr($files);
-    $gallery['Gallery']['images'] =  $files;
-    
-    $this->set('gallery', $gallery);
-    $this->set('galleries', $galleries);
-    }
-    //Code for News Blog this was the original but news2 looks better so I used that instead.  this one is current unused
-    public function news()
+    public function newspost($id = null)
     {
         $this->loadModel('Blog');
-        $news = $this->Blog->find('all', array(
-            'order' => array(
-                'created' => 'DESC'
-            )
-        ));
-     //   pr($news); exit();
+        $news = $this->Blog->findById($id);
+        //pr($content);
+        $anews = $this->Blog->find('all');
+        
         $this->set('news', $news);
+        $this->set('anews', $anews);
     }
-    
-    //Code for News Blog, currently in use for /news
-    public function news2()
+        
+    //Code for News Blog 
+    public function news()
     {
         $this->loadModel('Blog');
         $news = $this->Blog->find('all', array(

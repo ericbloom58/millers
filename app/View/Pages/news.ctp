@@ -21,7 +21,7 @@
 
 <!-- Content
 ================================================== -->
-<div class="container">
+<div class="container" style="margin-bottom:5%;">
 <div class="row">
 	<div class="col-md-9 extra-gutter-right-35px">
 
@@ -30,126 +30,31 @@
 
 			<div class="isotope-sizer"></div>
 			
+                        <?php foreach($news as $n): ?>
 			<!-- Item -->
-			<div class="isotope-item">
+			<div class="isotope-item" id="<?= $n['Blog']['id']; ?>" style="margin-top:5%;">
 				<!-- Post -->
 				<div class="post-container">
-					<div class="post-img"><a href="blog-full-width-single-post.html" class="img-hover"><img src="images/blog-01.jpg" alt=""></a></div>
+					<div class="post-img"><a href="/content/news/<?= $n['Blog']['id']; ?>" class="img-hover"><img src="images/blog-01.jpg" alt=""></a></div>
 
 					<div class="post-content">
 						<!-- Categories -->
 						<ul class="post-categories">
-							<li><a href="#">Blog Post 17</a></li>
+							<li><a href="#"><?= $n['Blog']['name']; ?></a></li>
 						</ul>
 
 						<!-- Meta -->
 						<div class="meta-tags">
-							<span>August 22, 2016</span>
+                                                    <h5>Posted on: <span><?= date('M d y', strtotime($n['Blog']['created'])); ?></span></h5>
 						</div>
 
-						<a href="#"><h3>New Savings</h3></a>
-						<p>Learn about our new savings with our Savings Card!</p>
+						
+                                                <p><?= $n['Blog']['description']; ?></p>
 					</div>
 
 				</div>
-			</div>	
-                        
-			<!-- Item -->
-			<div class="isotope-item">
-				<!-- Post -->
-				<div class="post-container">
-					<div class="post-img"><a href="blog-full-width-single-post.html" class="img-hover"><img src="images/blog-01.jpg" alt=""></a></div>
-
-					<div class="post-content">
-						<!-- Categories -->
-						<ul class="post-categories">
-							<li><a href="#">Blog Post 2</a></li>
-						</ul>
-
-						<!-- Meta -->
-						<div class="meta-tags">
-							<span>August 23, 2016</span>
-						</div>
-
-						<a href="#"><h3>New Savings</h3></a>
-						<p>Learn about our new savings with our Savings Card!</p>
-					</div>
-
-				</div>
-			</div>	
-                        
-			<!-- Item -->
-			<div class="isotope-item">
-				<!-- Post -->
-				<div class="post-container">
-					<div class="post-img"><a href="blog-full-width-single-post.html" class="img-hover"><img src="images/blog-01.jpg" alt=""></a></div>
-
-					<div class="post-content">
-						<!-- Categories -->
-						<ul class="post-categories">
-							<li><a href="#">Blog Post 3</a></li>
-						</ul>
-
-						<!-- Meta -->
-						<div class="meta-tags">
-							<span>August 24, 2016</span>
-						</div>
-
-						<a href="#"><h3>New Savings</h3></a>
-						<p>Learn about our new savings with our Savings Card!</p>
-					</div>
-
-				</div>
-			</div>		
-                        
-			<!-- Item -->
-			<div class="isotope-item">
-				<!-- Post -->
-				<div class="post-container">
-					<div class="post-img"><a href="blog-full-width-single-post.html" class="img-hover"><img src="images/blog-01.jpg" alt=""></a></div>
-
-					<div class="post-content">
-						<!-- Categories -->
-						<ul class="post-categories">
-							<li><a href="#">Blog Post 4</a></li>
-						</ul>
-
-						<!-- Meta -->
-						<div class="meta-tags">
-							<span>August 25, 2016</span>
-						</div>
-
-						<a href="#"><h3>New Savings</h3></a>
-						<p>Learn about our new savings with our Savings Card!</p>
-					</div>
-
-				</div>
-			</div>		
-                        
-			<!-- Item -->
-			<div class="isotope-item">
-				<!-- Post -->
-				<div class="post-container">
-					<div class="post-img"><a href="blog-full-width-single-post.html" class="img-hover"><img src="images/blog-01.jpg" alt=""></a></div>
-
-					<div class="post-content">
-						<!-- Categories -->
-						<ul class="post-categories">
-							<li><a href="#">Blog Post 5</a></li>
-						</ul>
-
-						<!-- Meta -->
-						<div class="meta-tags">
-							<span>August 26, 2016</span>
-						</div>
-
-						<a href="#"><h3>New Savings</h3></a>
-						<p>Learn about our new savings with our Savings Card!</p>
-					</div>
-
-				</div>
-			</div>		
-
+			</div>
+                        <?php endforeach; ?> 
 		</div>
 		<!-- Isotope Wrapper / End -->
 
@@ -164,11 +69,13 @@
 			<h4>Blog Posts</h4>
 
 			<ul class="list-links">
-				<li><a href="#">Blog Post 1</a></li>
-				<li><a href="#">Blog Post 2</a></li>
-				<li><a href="#">Blog Post 3</a></li>
-				<li><a href="#">Blog Post 4</a></li>
-				<li><a href="#">Blog Post 5</a></li>
+                            <?php foreach($news as $new): ?>
+				<!-- Post #1 -->
+				<li>
+                                    <h5><a href="/content/news/<?= $new['Blog']['id']; ?>"><?= $new['Blog']['name']; ?></a></h5>
+                                    <h5>Posted on: <span><?= date('M d y', strtotime($new['Blog']['created'])); ?></span></h5>
+				</li>
+                            <?php endforeach; ?>
 			</ul>
 		</div>
 		<!-- Social Icons -->
@@ -185,6 +92,5 @@
 
 </div>
 </div>
-<div class="clearfix"></div>
 
 
