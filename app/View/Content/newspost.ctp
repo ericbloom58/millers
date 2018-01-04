@@ -10,6 +10,7 @@
 			<div class="col-md-12">
 
                             <h2>News: <strong><?= $news['Blog']['name']; ?></strong></h2>
+                                                <h5>Posted on: <span><?= date('M d y', strtotime($news['Blog']['created'])); ?></span></h5>
 
 			</div>
 		</div>
@@ -25,15 +26,11 @@
 <div class="row">
     <div class="col-md-12">
 	<div class="col-md-9">	
-			<!-- Item -->
 			<div id="<?= $news['Blog']['id']; ?>" style="margin-top:5%;">
-				<!-- Post -->
-						<!-- Categories --><a href="#"><?= $news['Blog']['name']; ?></a>
-                                                <h5>Posted on: <span><?= date('M d y', strtotime($news['Blog']['created'])); ?></span></h5>
 
 						
                                                 <!--<p><?= $news['Blog']['description']; ?></p>-->
-                                                <div class="container4blog" style="width:30%;">
+                                                <div class="container4blog" style="width:100%;">
                                                     <h5><?= $news['Blog']['blog']; ?></h5>
                                                 </div>
 			</div>
@@ -51,7 +48,7 @@
                             <?php foreach($anews as $new): ?>
 				<!-- Post #1 -->
 				<li>
-                                    <h5><a href="/content/news/<?= $new['Blog']['id']; ?>"><?= $new['Blog']['name']; ?></a></h5>
+                                    <h5><a href="/content/newspost/<?= $new['Blog']['id']; ?>"><?= $new['Blog']['name']; ?></a></h5>
                                     <h5>Posted on: <span><?= date('M d y', strtotime($new['Blog']['created'])); ?></span></h5>
 				</li>
                             <?php endforeach; ?>

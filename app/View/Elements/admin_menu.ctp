@@ -4,7 +4,7 @@
         <li class="header"></li>
                 <li class="header">Admin Dashboard</li>
            
-                <li class="<?= $section == 'web' ? 'active' : ''; ?> treeview">
+        <li class="<?= $section == 'web' ? 'active' : ''; ?> treeview">
           <a href="#">
             <i class="fa fa-globe"></i> <span>Webpage Management</span>
             <i class="fa fa-angle-left pull-right"></i>
@@ -22,7 +22,18 @@
           </ul>
         </li>
 
-       
+       <li class="<?= $section == 'web' ? 'active' : ''; ?> treeview">
+          <a href="#">
+            <i class="fa fa-globe"></i> <span>Inventory Management</span>
+            <i class="fa fa-angle-left pull-right"></i>
+          </a>
+                   
+          <ul class="treeview-menu">
+            <li><a href="/admin/recipes/"><i class="fa fa-edit"></i> View/Edit Recipes</a></li>
+            <li><a href="/admin/products/"><i class="fa fa-edit"></i> View/Edit Products</a></li>
+          </ul>
+        </li>
+        
         <li class="<?= $section == 'users' ? 'active' : ''; ?> treeview">
           <a href="#">
             <i class="fa fa-users"></i> <span>Users</span>

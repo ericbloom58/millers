@@ -27,6 +27,8 @@
  */
 //	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
         Router::connect('/', array('controller' => 'content', 'action' => 'home'));
+        Router::connect('/meats', array('controller' => 'content', 'action' => 'meats'));
+        Router::connect('/hotfoods', array('controller' => 'content', 'action' => 'hotfoods'));
         Router::connect('/about', array('controller' => 'content', 'action' => 'about_us'));
         Router::connect('/news', array('controller' => 'content', 'action' => 'news'));
         Router::connect('/specials', array('controller' => 'content', 'action' => 'specials'));

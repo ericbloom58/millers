@@ -100,7 +100,17 @@ class ContentController extends AppController {
         $this->set('notification', $this->Content->findById(17));
     }
     //End of Code for Home PAge
-
+    
+    public function meats()
+    {
+        $this->set('meats', $this->Content->findById(18));
+    }
+    
+    public function hotfoods()
+    {
+        $this->set('hotfoods', $this->Content->findById(19));
+    }
+    
     public function admin_index() {
         $this->set('contents', $this->Content->find('all'));
     }

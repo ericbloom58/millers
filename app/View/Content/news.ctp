@@ -40,7 +40,7 @@
 					<div class="post-content">
 						<!-- Categories -->
 						<ul class="post-categories">
-							<li><a href="#"><?= $n['Blog']['name']; ?></a></li>
+							<li><a href="/content/newspost/<?= $n['Blog']['id']; ?>"><?= $n['Blog']['name']; ?></a></li>
 						</ul>
 
 						<!-- Meta -->
@@ -72,7 +72,7 @@
                             <?php foreach($news as $new): ?>
 				<!-- Post #1 -->
 				<li>
-                                    <h5><a href="/content/news/<?= $new['Blog']['id']; ?>"><?= $new['Blog']['name']; ?></a></h5>
+                                    <h5><a href="/content/newspost/<?= $n['Blog']['id']; ?>"><?= $new['Blog']['name']; ?></a></h5>
                                     <h5>Posted on: <span><?= date('M d y', strtotime($new['Blog']['created'])); ?></span></h5>
 				</li>
                             <?php endforeach; ?>
