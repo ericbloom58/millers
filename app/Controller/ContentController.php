@@ -14,7 +14,7 @@ class ContentController extends AppController {
      public function beforeFilter() {
         parent::beforeFilter();
         // Allow users to register and logout.
-        $this->Auth->allow('about_us', 'news', 'news2', 'specials', 'newspost');
+        $this->Auth->allow('about_us', 'news', 'news2', 'specials', 'newspost', 'meats', 'hotfoods', 'subs');
     }
     //Code for About Us Page
     public function about_us() {
@@ -82,6 +82,31 @@ class ContentController extends AppController {
      //   pr($news); exit();
         $this->set('news', $news);
     }
+	
+	public function recipes()
+	{
+		$this->loadModel('Recipe');
+        $recipes = $this->Recipe->find('all', array(
+            'order' => array(
+                'created' => 'DESC'
+            )
+        ));
+     //   pr($news); exit();
+        $this->set('recipes', $recipes);
+	}
+	
+	public function partytrays()
+	{
+		$this->loadModel('Partytray');
+        $partytrays = $this->Partytray->find('all', array(
+            'order' => array(
+                'created' => 'DESC'
+            )
+        ));
+     //   pr($news); exit();
+        $this->set('partytrays', $partytrays);
+	}
+	
     //End of Code for News Blog
     public function specials()
     {
@@ -105,7 +130,10 @@ class ContentController extends AppController {
     {
         $this->set('meats', $this->Content->findById(18));
     }
-    
+    public function subs()
+    {
+        $this->set('subs', $this->Content->findById(20));
+    }
     public function hotfoods()
     {
         $this->set('hotfoods', $this->Content->findById(19));

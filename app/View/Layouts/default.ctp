@@ -87,10 +87,10 @@
 							<li><a href="/news">News</a></li>
 							<li><a href="/specials">Weekly Specials</a></li>
 							<li class="dropdown" ><a href="/pages/recipes">Recipes</a></li>
-							<li><a href="/pages/meats">Meats</a></li>
-							<li><a href="/pages/hotfoods">Hot Foods</a></li>
+							<li><a href="/meats">Meats</a></li>
+							<li><a href="/hotfoods">Hot Foods</a></li>
 							<li><a href="/pages/partytray">Party Trays</a></li>
-							<li><a href="/pages/sandwiches">Subs & Sandwiches</a></li>
+							<li><a href="/subs">Subs & Sandwiches</a></li>
 							<li><a href="/pages/contact-classic">Contact</a></li>
 							<!-- Cart Icon -->
 							<li class="cart-icon"><a href="shopping-cart.html"><i class="sl sl-icon-basket"></i><span class="cart-counter">0</span></a></li>
@@ -132,10 +132,10 @@
 				</ul>
 
 				<ul class="footer-links">
-							<li><a href="/pages/meats">Meats</a></li>
-							<li><a href="/pages/hotfoods">Hot Foods</a></li>
+							<li><a href="/meats">Meats</a></li>
+							<li><a href="/hotfoods">Hot Foods</a></li>
 							<li><a href="/pages/partytray">Party Trays</a></li>
-							<li><a href="/pages/sandwiches">Subs & Sandwiches</a></li>
+							<li><a href="/subs">Subs & Sandwiches</a></li>
 							<li><a href="/pages/contact-classic">Contact</a></li>
 				</ul>
 			</div>		

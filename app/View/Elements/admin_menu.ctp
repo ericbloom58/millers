@@ -30,6 +30,7 @@
                    
           <ul class="treeview-menu">
             <li><a href="/admin/recipes/"><i class="fa fa-edit"></i> View/Edit Recipes</a></li>
+            <li><a href="/admin/partytrays/"><i class="fa fa-edit"></i> View/Edit Party Trays</a></li>
             <li><a href="/admin/products/"><i class="fa fa-edit"></i> View/Edit Products</a></li>
           </ul>
         </li>
