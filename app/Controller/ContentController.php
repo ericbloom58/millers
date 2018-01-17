@@ -97,14 +97,22 @@ class ContentController extends AppController {
 	
 	public function partytrays()
 	{
-		$this->loadModel('Partytray');
-        $partytrays = $this->Partytray->find('all', array(
-            'order' => array(
-                'created' => 'DESC'
-            )
-        ));
-     //   pr($news); exit();
-        $this->set('partytrays', $partytrays);
+        $this->set('partytrays', $this->Content->findById(21));
+        $partytrays = 'Party Trays';
+         $this->loadModel('Category'); //loads Category's Model then using the if below sets the PR to sort via Category THEN Product
+           if(!isset($id))
+           {
+                $products = $this->Category->find('all', array(
+                'conditions' => array(
+                    'Category.name' => $partytrays
+                )));
+           }
+            else
+            {
+                $products = $this->Product->findById($id, array('recursive' => 2));
+            }
+            
+            $this->set('products', $products);
 	}
 	
     //End of Code for News Blog
@@ -129,14 +137,71 @@ class ContentController extends AppController {
     public function meats()
     {
         $this->set('meats', $this->Content->findById(18));
+        $meats = 'Meats';
+         $this->loadModel('Category'); //loads Category's Model then using the if below sets the PR to sort via Category THEN Product
+           if(!isset($id))
+           {
+                $products = $this->Category->find('all', array(
+                'conditions' => array(
+                    'Category.name' => $meats
+                )));
+           }
+            else
+            {
+                $products = $this->Product->findById($id, array('recursive' => 2));
+            }
+            
+            $this->set('products', $products);
+        
+       /* $this->loadModel('Product');
+        $products = $this->Product->find('all', array(
+            'order'=> array(
+                'created'=> 'DESC'
+                )
+            ));
+                $this->set('products', $products);*/
+        //  echo pr($products, true);
     }
     public function subs()
     {
         $this->set('subs', $this->Content->findById(20));
+        $subs = 'Subs & Sandwiches';
+         $this->loadModel('Category'); //loads Category's Model then using the if below sets the PR to sort via Category THEN Product
+           if(!isset($id))
+           {
+                $products = $this->Category->find('all', array(
+                'conditions' => array(
+                    'Category.name' => $subs
+                )));
+           }
+            else
+            {
+                $products = $this->Product->findById($id, array('recursive' => 2));
+            }
+            
+            $this->set('products', $products);
+        
     }
     public function hotfoods()
     {
         $this->set('hotfoods', $this->Content->findById(19));
+        
+        $hotfoods = 'Hot Foods';
+        $this->loadModel('Category'); //loads Category's Model then using the if below sets the PR to sort via Category THEN Product
+           if(!isset($id))
+           {
+                $products = $this->Category->find('all', array(
+                'conditions' => array(
+                    'Category.name' => $hotfoods
+                )));
+           }
+            else
+            {
+                $products = $this->Product->findById($id, array('recursive' => 2));
+            }
+            
+            $this->set('products', $products);
+        
     }
     
     public function admin_index() {

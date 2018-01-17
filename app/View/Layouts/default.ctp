@@ -86,10 +86,10 @@
 							<li><a href="/about">About Us</a></li>
 							<li><a href="/news">News</a></li>
 							<li><a href="/specials">Weekly Specials</a></li>
-							<li class="dropdown" ><a href="/pages/recipes">Recipes</a></li>
+							<li class="dropdown" ><a href="/recipes">Recipes</a></li>
 							<li><a href="/meats">Meats</a></li>
 							<li><a href="/hotfoods">Hot Foods</a></li>
-							<li><a href="/pages/partytray">Party Trays</a></li>
+							<li><a href="/partytrays">Party Trays</a></li>
 							<li><a href="/subs">Subs & Sandwiches</a></li>
 							<li><a href="/pages/contact-classic">Contact</a></li>
 							<!-- Cart Icon -->
@@ -125,16 +125,16 @@
 				<h4>Helpful Links</h4>
 				<ul class="footer-links">
 							<li class="dropdown"><a href="/" class="current">Home</a></li>
-							<li><a href="/pages/aboutus">About Us</a></li>
+							<li><a href="/about">About Us</a></li>
 							<li><a href="/news">News</a></li>
 							<li><a href="/specials">Weekly Specials</a></li>
-							<li class="dropdown" ><a href="/pages/recipes">Recipes</a></li>
+							<li class="dropdown" ><a href="/recipes">Recipes</a></li>
 				</ul>
 
 				<ul class="footer-links">
 							<li><a href="/meats">Meats</a></li>
 							<li><a href="/hotfoods">Hot Foods</a></li>
-							<li><a href="/pages/partytray">Party Trays</a></li>
+							<li><a href="/partytrays">Party Trays</a></li>
 							<li><a href="/subs">Subs & Sandwiches</a></li>
 							<li><a href="/pages/contact-classic">Contact</a></li>
 				</ul>

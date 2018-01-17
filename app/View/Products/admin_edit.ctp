@@ -14,6 +14,12 @@ function closeCustomRoxy2(){
         height: 250px;
     }
     </style>
+    <?php $cats = array();
+    foreach($this->data['Category'] as $c)
+    {
+        $cats[] = $c['id'];
+    }
+    ?>
 <?= $this->Form->create('edit', array('type' => 'file')); ?>
     <?= $this->Form->hidden('Product.id'); ?>
 		<div class="row form-group">	
@@ -25,12 +31,17 @@ function closeCustomRoxy2(){
 		</div>
     <div class='row form-group'>
         <div class="col-md-4">
-        			<?php echo $this->Form->input('Product.category', array('div' => 'col-md-4', 'label' => 'Category', 'class' => 'input form-control', 'options' => array(
-                        'meat' => 'Meats',
-                        'hotfood' => 'Hot Foods',
-                        'partytray' => 'Party Trays',
-                        'subandsandwhich' => 'Subs and Sandwiches'
-                    ))); ?>
+            <label>Categories</label>
+            <select multiple name='data[Category][]' class="input form-control" style="height:100px;">
+                <?php foreach($categories as $i => $c):
+                    $selected = "";
+                    if(in_array($i, $cats))
+                            $selected = 'selected';
+                    ?>
+                <option <?= $selected; ?> value='<?= $i ?>'><?= $c ?></option>
+                <?php
+                endforeach; ?>
+            </select>
         </div>
 		<div class="row form-group">
 			<?php echo $this->Form->input('Product.price', array('div' => 'col-md-8', 'label' => 'Product Price', 'autofocus', 'class' => 'input form-control')); ?>

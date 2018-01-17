@@ -22,21 +22,21 @@ class CategoriesController extends AppController {
     function index($id = null) {
             $this->loadModel('Category'); //loads Category's Model then using the if below sets the PR to sort via Category THEN Category
            if(!isset($id))
-                $categorys = $this->Category->find('all', array('recursive' => 3, 'order' => 'Category.name ASC'));
+                $categories = $this->Category->find('all', array('recursive' => 3, 'order' => 'Category.name ASC'));
             else
-                $categorys = $this->Category->findById($id, array('recursive' => 2));
+                $categories = $this->Category->findById($id, array('recursive' => 2));
        
-            $this->set('categorys', $categorys);
+            $this->set('categories', $categories);
         
-//          echo pr($categorys, true); exit();
+//          echo pr($categories, true); exit();
     }
     // ^ should not currently be in use ^
         
     public function admin_index() {
         $this->set('categories', $this->Category->find('all'));
         
-//        $categorys = $this->Category->find('all');
-//        echo pr($categorys, true); exit();
+//        $categories = $this->Category->find('all');
+//        echo pr($categories, true); exit();
     }
 
     public function view($id) {
@@ -55,7 +55,7 @@ class CategoriesController extends AppController {
         if ($this->request->is('post')) {
             if ($this->Category->saveAll($this->request->data)) {
                 $this->Session->setFlash("New category successfully created.", 'flash_success');
-                return $this->redirect('/admin/categorys');
+                return $this->redirect('/admin/categories');
             }
             else {
                    $this->Session->setFlash("An error occurred. Please try again.", 'flash_error');
@@ -71,7 +71,7 @@ class CategoriesController extends AppController {
         if ($this->request->is('post')) {
             if ($this->Category->saveAll($this->request->data)) {
                 $this->Session->setFlash("Your category has been successfully updated.", 'flash_success');
-                return $this->redirect('/admin/categorys');
+                return $this->redirect('/admin/categories');
             }
             $this->Flash->error(__('Unable to update your category.'));
         }
@@ -109,7 +109,7 @@ class CategoriesController extends AppController {
    
    
    public function isAuthorized($user) {
-        // All registered users can add categorys
+        // All registered users can add categories
         if ($this->action === 'add') {
             return true;
         }

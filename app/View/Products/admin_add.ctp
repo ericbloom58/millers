@@ -24,14 +24,19 @@ function closeCustomRoxy2(){
 		</div>
 		<div class="row form-group">
 			<?php echo $this->Form->input('Product.price', array('div' => 'col-md-8', 'label' => 'Product Price', 'autofocus', 'class' => 'input form-control')); ?>
-		</div>
+                </div>
+                        <p> Please input price as 4.99 instead of $4.99 </p>
                 <div class='row form-group'>
-                        <?php echo $this->Form->input('Product.category', array('div' => 'col-md-4', 'label' => 'Category', 'class' => 'input form-control', 'options' => array(
-                        'meat' => 'Meats',
-                        'hotfood' => 'Hot Foods',
-                        'partytray' => 'Party Trays',
-                        'subandsandwhich' => 'Subs and Sandwiches'
-                    ))); ?>
+                    <div class="col-md-4">
+                    <label>Categories</label>
+                    <select multiple name='data[Category][]' class="input form-control" style="height:100px;">
+                        <?php foreach($categories as $i => $c):
+                        ?>
+                            <option value='<?= $i ?>'><?= $c ?></option>
+                        <?php
+                        endforeach; ?>
+                    </select>
+                    </div>
                 </div>
 
 

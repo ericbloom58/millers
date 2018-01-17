@@ -28,6 +28,8 @@
 //	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
         Router::connect('/', array('controller' => 'content', 'action' => 'home'));
         Router::connect('/meats', array('controller' => 'content', 'action' => 'meats'));
+        Router::connect('/subs', array('controller' => 'content', 'action' => 'subs'));
+        Router::connect('/partytrays', array('controller' => 'content', 'action' => 'partytrays'));
         Router::connect('/recipes', array('controller' => 'content', 'action' => 'recipes'));
         Router::connect('/hotfoods', array('controller' => 'content', 'action' => 'hotfoods'));
         Router::connect('/about', array('controller' => 'content', 'action' => 'about_us'));

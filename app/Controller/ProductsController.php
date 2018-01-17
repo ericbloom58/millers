@@ -33,6 +33,8 @@ class ProductsController extends AppController {
     // ^ should not currently be in use ^
         
     public function admin_index() {
+        //$this->loadModel('Category'); //  //These two lines are uneeded via cakephp magic
+        //$this->set('categories', $this->Category->find('list', array('fields' => array('id', 'name'))));
         $this->set('products', $this->Product->find('all'));
         
 //        $products = $this->Product->find('all');
@@ -61,7 +63,8 @@ class ProductsController extends AppController {
                    $this->Session->setFlash("An error occurred. Please try again.", 'flash_error');
             }
         }
-        
+        $this->loadModel('Category');
+        $this->set('categories', $this->Category->find('list', array('fields' => array('id', 'name'))));
          //$this->loadModel('Meat');
          //$this->set('meats', $this->Flavor->find('all', array('fields' => array('id', 'name'))));
     }   
@@ -87,7 +90,8 @@ class ProductsController extends AppController {
             $this->request->data = $product;
         }
         
-        
+        $this->loadModel('Category');
+        $this->set('categories', $this->Category->find('list', array('fields' => array('id', 'name'))));
          //$this->loadModel('Meat');
         //$this->set('meats', $this->Flavor->find('all', array('fields' => array('id', 'name'))));
     }

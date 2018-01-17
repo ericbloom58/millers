@@ -20,7 +20,19 @@
 	<?php foreach ($products as $product) { ?>
 		<tr>
 			<td><?php echo $product['Product']['name']; ?></td>
-                        <td><?php echo $product['Product']['category']; ?> </td>
+                        <td>
+                            <?php 
+                            $count = 0;
+                            foreach($product['Category'] as $c)
+                            {
+                                if($count > 0)
+                                    echo ", ";
+                                
+                                echo ucwords($c['name']);
+                                $count++;
+                            }
+                            ?>
+                        </td>
 			<td>
 				<a role="button" class="btn btn-primary" href="/admin/products/edit/<?php echo $product['Product']['id']; ?>"><i class="fa fa-edit"></i> Edit</a>&nbsp;
 				<a role="button" class="btn btn-danger delete-object" onclick='return confirm("Are you sure you want to delete \"<?php echo $product['Product']['name']; ?>?\" This action CANNOT be undone.")'

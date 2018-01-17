@@ -28,7 +28,6 @@ class Product extends AppModel {
 //                'unique' => true
 //            )
     );
-    public $hasMany = array(
-        'ProductSpecialOption'
-    );
+    //public $hasMany = array(
+    //);
 }
